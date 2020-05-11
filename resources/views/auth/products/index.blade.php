@@ -39,8 +39,8 @@
                             <form action="{{ route('products.destroy', $product) }}" method="POST">
                                 <a class="btn btn-success" type="button"
                                    href="{{ route('products.show', $product) }}">Открыть</a>
-                                <a class="btn btn-success" type="button"
-                                   href="{{ route('skus.index', $product) }}">Skus</a>
+                                {{--<a class="btn btn-success" type="button"
+                                   href="{{ route('skus.index', $product) }}">Skus</a>--}}
                                 <a class="btn btn-warning" type="button"
                                    href="{{ route('products.edit', $product) }}">Редактировать</a>
                                 @csrf
@@ -52,7 +52,7 @@
             @endforeach
             </tbody>
         </table>
-        {{ $products->links() }}
+        {{--{{ $products->links() }}--}}
         <a class="btn btn-success" type="button" href="{{ route('products.create') }}">Добавить товар</a>
     </div>
 @endsection

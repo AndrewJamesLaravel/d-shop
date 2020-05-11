@@ -20,7 +20,7 @@
                     <tr>
                         <td>
                             <a href="{{ route('product', [$product->category->code, $product->code]) }}">
-                                <img height="56px" src="http://internet-shop.tmweb.ru/storage/products/iphone_x.jpg">
+                                <img height="56px" src="{{ Storage::url($product->image) }}" alt="img">
                                 {{ $product->name }}
                             </a>
                         </td>
@@ -29,14 +29,12 @@
                                 <form action="{{ route('basket-remove', $product) }}" method="POST">
                                     <button type="submit" class="btn btn-danger" href=""><span
                                             class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
-                                    {{--<input type="hidden" name="_token" value="Qu2sUNbR6ogZCqJ7mfQDlOA0uFsYFcP9P9DBvka1">--}}
                                     @csrf
                                 </form>
                                 <form action="{{ route('basket-add', $product) }}" method="POST">
                                     <button type="submit" class="btn btn-success"
                                             href="{{ route('basket-add', $product) }}"><span
                                             class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
-                                    {{--<input type="hidden" name="_token" value="Qu2sUNbR6ogZCqJ7mfQDlOA0uFsYFcP9P9DBvka1">--}}
                                     @csrf
                                 </form>
                             </div>

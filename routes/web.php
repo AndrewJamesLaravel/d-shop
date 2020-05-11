@@ -21,6 +21,7 @@ Route::group([
         Route::get('/orders', 'OrderController@index')->name('home');
     });
     Route::resource('categories', 'CategoryController');
+    Route::resource('products', 'ProductController');
 });
 
 

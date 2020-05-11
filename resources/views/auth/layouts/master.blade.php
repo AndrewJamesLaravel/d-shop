@@ -30,10 +30,10 @@
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="{{ route('categories.index') }}">Категории</a></li>
-                    <li><a href="#{{--{{ route('products.index') }}--}}">Товары</a>
+                    <li><a href="{{ route('products.index') }}">Товары</a>
                     <li><a href="#{{--{{ route('properties.index') }}--}}">Свойства</a>
                     </li>
-                    <li><a href="#{{--{{ route('home') }}--}}">Заказы</a></li>
+                    <li><a href="{{ route('home') }}">Заказы</a></li>
                 </ul>
 
                 @guest
