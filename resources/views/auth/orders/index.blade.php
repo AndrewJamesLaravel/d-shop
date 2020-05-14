@@ -34,7 +34,7 @@
                     <td>{{ $order->phone }}</td>
                     <td>{{ $order->created_at->format('H:i d/m/Y') }}</td>
                     {{--<td>{{ $order->sum }} {{ $order->currency->symbol }}</td>--}}
-                    <td>{{ $order->getFullPrice() }}</td>
+                    <td>{{ $order->calculateFullSum() }}</td>
                     <td>
                         <div class="btn-group" role="group">
                             <a class="btn btn-success" type="button"

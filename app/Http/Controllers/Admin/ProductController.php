@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use App\Models\Category;
 use App\Models\Product;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -54,7 +53,7 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show(Product $product)
@@ -65,7 +64,7 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit(Product $product)
@@ -78,7 +77,7 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Product  $product
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(ProductRequest $request, Product $product)
@@ -101,7 +100,7 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Product $product)
