@@ -41,13 +41,13 @@ Route::get('/', 'MainController@index')->name('index');
 Route::get('/categories', 'MainController@categories')->name('categories');
 
 Route::group(['prefix' => 'basket'], function () {
-    Route::post('/add/{id}', 'BasketController@basketAdd')->name('basket-add');
+    Route::post('/add/{product}', 'BasketController@basketAdd')->name('basket-add');
 
     Route::group(['middleware' => 'basket_not_empty'], function () {
         Route::get('/', 'BasketController@basket')->name('basket');
         Route::get('/place', 'BasketController@basketPlace')->name('basket-place');
         Route::post('/place', 'BasketController@basketConfirm')->name('basket-confirm');
-        Route::post('/remove/{id}', 'BasketController@basketRemove')->name('basket-remove');
+        Route::post('/remove/{product}', 'BasketController@basketRemove')->name('basket-remove');
     });
 });
 
