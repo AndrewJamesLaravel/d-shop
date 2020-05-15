@@ -14,6 +14,18 @@
                 @csrf
             </form>
         @else
-            Не доступен
+            <span>Не доступен</span>
+            <br>
+            <span>Сообщить мне когда товар появится в наличии</span>
+            <div class="warning">
+                @if($errors->get('email'))
+                    {!! $errors->get('email')[0] !!}
+                @endif
+            </div>
+            <form method="POST" action="{{ route('subscription', $product) }}">
+                @csrf
+                <input type="text" name="email" placeholder="email">
+                <button type="submit">Отправить</button>
+            </form>
         @endif
 @endsection

@@ -2,9 +2,11 @@
 
 namespace App\Classes;
 
+use App\Mail\OrderCreated;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use phpDocumentor\Reflection\Types\AbstractList;
 
 class Basket
@@ -57,11 +59,12 @@ class Basket
         return true;
     }
 
-    public function saveOrder($name, $phone) // Считает к-во продуктов в базе и сохраняет
+    public function saveOrder($name, $phone, $email) // Считает к-во продуктов в базе и сохраняет
     {
         if (!$this->countAvailable(true)) {
             return false;
         }
+        Mail::to($email)->send(new OrderCreated($name, $this->getOrder()));
         return $this->order->saveOrder($name, $phone);
     }
 
