@@ -1,18 +1,18 @@
 @extends('layouts.master')
 
-@section('title', 'Корзина')
+@section('title', __('main.titles.basket_title'))
 
 @section('content')
-        <h1>Корзина</h1>
-        <p>Оформление заказа</p>
+        <h1>@lang('basket.h1_basket')</h1>
+        <p>@lang('basket.checkout_1')</p>
         <div class="panel">
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Название</th>
-                    <th>Кол-во</th>
-                    <th>Цена</th>
-                    <th>Стоимость</th>
+                    <th>@lang('basket.thead.prod-name')</th>
+                    <th>@lang('basket.thead.prod-quantity')</th>
+                    <th>@lang('basket.thead.prod-price')</th>
+                    <th>@lang('basket.thead.prod-total')</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -20,8 +20,8 @@
                     <tr>
                         <td>
                             <a href="{{ route('product', [$product->category->code, $product->code]) }}">
-                                <img height="56px" src="{{ Storage::url($product->image) }}" alt="img">
-                                {{ $product->name }}
+                                <img height="56px" src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}">
+                                {{ $product->__('name') }}
                             </a>
                         </td>
                         <td><span class="badge">{{ $product->pivot->count }}</span>
@@ -44,14 +44,14 @@
                     </tr>
                 @endforeach
                 <tr>
-                    <td colspan="3">Общая стоимость:</td>
+                    <td colspan="3">@lang('basket.thead.prod-total'):</td>
                     <td>{{ $order->getFullSum() }} ₽</td>
                 </tr>
                 </tbody>
             </table>
             <br>
             <div class="btn-group pull-right" role="group">
-                <a type="button" class="btn btn-success" href="{{ route('basket-place') }}">Оформить заказ</a>
+                <a type="button" class="btn btn-success" href="{{ route('basket-place') }}">@lang('basket.checkout_2')</a>
             </div>
         </div>
 @endsection

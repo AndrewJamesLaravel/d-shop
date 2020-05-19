@@ -1,10 +1,10 @@
 @extends('auth.layouts.master')
 
-@section('title', 'Продукт ' . $product->name)
+@section('title', 'Продукт ' . $product->__('name'))
 
 @section('content')
     <div class="col-md-12">
-        <h1>{{ $product->name }}</h1>
+        <h1>{{ $product->__('name') }}</h1>
         <table class="table">
             <tbody>
             <tr>
@@ -25,7 +25,7 @@
             </tr>
             <tr>
                 <td>Название</td>
-                <td>{{ $product->name }}</td>
+                <td>{{ $product->__('name') }}</td>
             </tr>
             <tr>
                 <td>Название en</td>

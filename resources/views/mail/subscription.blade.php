@@ -1,3 +1,3 @@
-Уважаемый гость, товар {{ $product->name }} появился в наличии!
+@lang('mail/subscription.accost_1') {{ $product->name }} @lang('mail/subscription.accost_2')
 
-<a href="{{ route('product', [$product->category->code, $product->code]) }}">Узнать подробности</a>
+<a href="{{ route('product', [$product->category->code, $product->code]) }}">@lang('mail/subscription.to_product_page')</a>

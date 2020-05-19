@@ -1,6 +1,6 @@
-<p>Уважаемый {{ $name }}</p>
+<p>@lang('mail/order_created.accost') {{ $name }}</p>
 
-<p>@lang('mail/order_created.your_order') {{ $fullSum }} создан</p>
+<p>@lang('mail/order_created.your_order') {{ $fullSum }} @lang('mail/order_created.your_order_created')</p>
 
 <table>
     <tbody>
@@ -9,12 +9,12 @@
                 <td>
                     <a href="{{ route('product', [$product->category->code, $product->code]) }}">
                         <img height="56px" src="{{ Storage::url($product->image) }}" alt="img">
-                        {{ $product->name }}
+                        {{ $product->__('name') }}
                     </a>
                 </td>
                 <td><span class="badge">{{ $product->pivot->count }}</span>
                     <div class="btn-group form-inline">
-                        {!! $product->description !!}
+                        {!! $product->__('description') !!}
                     </div>
                 </td>
                 <td>{{ $product->price }} ₽</td>
