@@ -6,7 +6,7 @@
         <h1>@lang('order.confirm_order'):</h1>
         <div class="container">
             <div class="row justify-content-center">
-                <p>@lang('order.total_coast'): <b>{{ $order->calculateFullSum() }} {{ $currencySymbol }}</b></p>
+                <p>@lang('order.total_coast'): <b>{{ $order->getFullSum() }} {{ $currencySymbol }}</b></p>
                 <form action="{{ route('basket-confirm') }}" method="POST">
                     <div>
                         <p>@lang('order.credentials_fill'):</p>
