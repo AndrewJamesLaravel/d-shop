@@ -12,13 +12,13 @@
                         {{ $product->__('name') }}
                     </a>
                 </td>
-                <td><span class="badge">{{ $product->pivot->count }}</span>
+                <td><span class="badge">{{ $product->countInOrder }}</span>
                     <div class="btn-group form-inline">
                         {!! $product->__('description') !!}
                     </div>
                 </td>
-                <td>{{ $product->price }} ₽</td>
-                <td>{{ $product->getPriceForCount() }} ₽</td>
+                <td>{{ $product->price }} {{ $currencySymbol }}</td>
+                <td>{{ $product->getPriceForCount() }} {{ $currencySymbol }}</td>
             </tr>
         @endforeach
     </tbody>

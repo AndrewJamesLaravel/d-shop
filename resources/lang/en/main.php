@@ -8,6 +8,7 @@ return [
         'category_title' => 'Category ',
         'categories_title' => 'All Categories',
         'basket_title' => 'Cart',
+        'auth_title' => 'Sign In',
     ],
 
     'online_shop' => 'Online Shop',

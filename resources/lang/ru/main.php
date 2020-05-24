@@ -8,6 +8,7 @@ return [
         'category_title' => 'Категория ',
         'categories_title' => 'Все категории',
         'basket_title' => 'Корзина',
+        'auth_title' => 'Войти',
     ],
 
     'online_shop' => 'Интернет Магазин',

@@ -25,7 +25,6 @@ class BasketController extends Controller
             session()->flash('warning', __('basket.not_available_in_full'));
         }
 
-        Order::eraseOrderSum();
         return redirect()->route('index');
     }
 

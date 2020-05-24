@@ -24,7 +24,7 @@
     <nav class="navbar navbar-default navbar-expand-md navbar-light navbar-laravel">
         <div class="container">
             <a class="navbar-brand" href="{{ route('index') }}">
-                Вернуться на сайт
+                @lang('login.back_to_main_page')
             </a>
 
             <div id="navbar" class="collapse navbar-collapse">
@@ -40,10 +40,10 @@
                 @guest
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Войти</a>
+                            <a class="nav-link" href="{{ route('login') }}">@lang('login.login')</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Зарегистрироваться</a>
+                            <a class="nav-link" href="{{ route('register') }}">@lang('login.register')</a>
                         </li>
                     </ul>
                 @endguest
