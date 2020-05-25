@@ -18,6 +18,17 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
+    // TODO: check table name for relation
+    public function skus()
+    {
+        return $this->hasMany(Sku::class);
+    }
+
+    public function properties()
+    {
+        return $this->belongsToMany(Property::class);
+    }
+
     public function getPriceForCount()
     {
         if (!is_null($this->pivot)) {
