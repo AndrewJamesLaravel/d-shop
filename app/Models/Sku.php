@@ -3,19 +3,21 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Sku extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = ['product_id', 'count', 'price'];
 
     public function product()
     {
-        $this->belongsTo(Product::class);
+        return $this->belongsTo(Product::class);
     }
 
-    // TODO: check table name and fields
-    public function skus()
+    public function propertyOptions()
     {
-        return $this->belongsToMany(PropertyOption::class);
+        return $this->belongsToMany(PropertyOption::class, 'sku_property_option')->withTimestamps();
     }
 }
