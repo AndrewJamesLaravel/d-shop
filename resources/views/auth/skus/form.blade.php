@@ -49,7 +49,6 @@
                         <div class="input-group row">
                             <label for="property_id[{{ $property->id }}]" class="col-sm-2 col-form-label">{{ $property->name }}: </label>
                             <div class="col-sm-6">
-                                {{--@include('auth.layouts.error', ['fieldName' => 'property'])--}}
                                 <select name="property_id[{{ $property->id }}]" class="form-control">
                                     @foreach($property->propertyOptions as $propertyOption)
                                         <option value="{{ $propertyOption->id }}"

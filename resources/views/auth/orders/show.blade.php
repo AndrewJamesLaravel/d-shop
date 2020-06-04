@@ -20,7 +20,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {{--@foreach ($skus as $sku)
+                        @foreach ($skus as $sku)
                             <tr>
                                 <td>
                                     <a href="{{ route('sku', [$sku->product->category->code, $sku->product->code, $sku]) }}">
@@ -33,8 +33,8 @@
                                 <td>{{ $sku->pivot->price }} {{ $order->currency->symbol }}</td>
                                 <td>{{ $sku->pivot->price * $sku->pivot->count }} {{ $order->currency->symbol }}</td>
                             </tr>
-                        @endforeach--}}
-                        @foreach ($products as $product)
+                        @endforeach
+                        {{--@foreach ($products as $product)
                             <tr>
                                 <td>
                                     <a href="{{ route('product', [$product->category->code, $product->code]) }}">
@@ -47,7 +47,7 @@
                                 <td>{{ $product->pivot->price }} {{ $order->currency->symbol }}</td>
                                 <td>{{ $product->pivot->price * $product->pivot->count}} {{ $order->currency->symbol }}</td>
                             </tr>
-                        @endforeach
+                        @endforeach--}}
                         <tr>
                             <td colspan="3">Общая стоимость:</td>
                             <td>{{ $order->sum }} {{ $order->currency->symbol }}</td>

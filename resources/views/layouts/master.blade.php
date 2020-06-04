@@ -81,9 +81,9 @@
             <div class="col-lg-6">
                     <p>Самые популярные товары</p>
                     <ul>
-                        @foreach($bestProducts as $bestProduct)  {{--$basketProducts from BestProductsComposer.php--}}
-                            <li><a href="{{ route('product', [$bestProduct->category->code, $bestProduct->code]) }}">{{ $bestProduct->__('name') }}</a></li>
-                        @endforeach
+                        {{--@foreach($bestProducts as $bestProduct)  --}}{{--$basketProducts from BestProductsComposer.php--}}{{--
+                            <li><a href="{{ route('sku', [$bestProduct->category->code, $bestProduct->code]) }}">{{ $bestProduct->__('name') }}</a></li>
+                        @endforeach--}}
                     </ul>
                 </div>
             </div>

@@ -19,7 +19,7 @@ class PropertyOptionController extends Controller
     public function index(Property $property)
     {
         $propertyOptions = PropertyOption::paginate(10);
-        return view('auth.property_options.index', compact('propertyOptions', 'property'));
+        return view('auth.property_options.index', compact('propertyOptions', 'property')); //check
     }
 
     /**
@@ -69,7 +69,7 @@ class PropertyOptionController extends Controller
      */
     public function edit(Property $property, PropertyOption $propertyOption)
     {
-        return view('auth.property_options.form', compact('propertyOption', 'property'));
+        return view('auth.property_options.form', compact('property', 'propertyOption'));
     }
 
     /**

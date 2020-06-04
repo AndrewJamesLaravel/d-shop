@@ -20,14 +20,14 @@ class SkuController extends Controller
     public function index(Product $product)
     {
         $skus = $product->skus()->paginate(10);
-        return view('auth.skus.index', compact('skus', 'product'));
+        return view('auth.skus.index', compact('product', 'skus'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
      * @param  Product  $product
-     * @return void
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create(Product $product)
     {
@@ -39,7 +39,7 @@ class SkuController extends Controller
      *
      * @param  SkuRequest  $request
      * @param  Product  $product
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(SkuRequest $request, Product $product)
     {

@@ -8,14 +8,19 @@ use App\Http\Requests\ProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Property;
+use Exception;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|View
      */
     public function index()
     {
@@ -26,7 +31,7 @@ class ProductController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|View
      */
     public function create()
     {
@@ -38,8 +43,8 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @param  ProductRequest  $request
+     * @return RedirectResponse
      */
     public function store(ProductRequest $request)
     {
@@ -55,8 +60,8 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param  Product  $product
+     * @return Factory|View
      */
     public function show(Product $product)
     {
@@ -66,8 +71,8 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param  Product  $product
+     * @return Factory|View
      */
     public function edit(Product $product)
     {
@@ -79,9 +84,9 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\RedirectResponse
+     * @param  ProductRequest  $request
+     * @param  Product  $product
+     * @return RedirectResponse
      */
     public function update(ProductRequest $request, Product $product)
     {
@@ -105,8 +110,9 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\RedirectResponse
+     * @param  Product  $product
+     * @return RedirectResponse
+     * @throws Exception
      */
     public function destroy(Product $product)
     {

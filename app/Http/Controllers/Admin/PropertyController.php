@@ -32,7 +32,7 @@ class PropertyController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  PropertyRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(PropertyRequest $request)
@@ -44,7 +44,7 @@ class PropertyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Property  $property
+     * @param  Property  $property
      * @return \Illuminate\Http\Response
      */
     public function show(Property $property)
@@ -55,7 +55,7 @@ class PropertyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Property  $property
+     * @param  Property  $property
      * @return \Illuminate\Http\Response
      */
     public function edit(Property $property)
@@ -67,8 +67,8 @@ class PropertyController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Property  $property
+     * @param  PropertyRequest  $request
+     * @param  Property  $property
      * @return \Illuminate\Http\Response
      */
     public function update(PropertyRequest $request, Property $property)
@@ -80,8 +80,9 @@ class PropertyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Property  $property
+     * @param  Property  $property
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Property $property)
     {
