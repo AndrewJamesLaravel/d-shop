@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\PropertyOptionRequest;
 use App\Models\Property;
 use App\Models\PropertyOption;
-use Illuminate\Http\Response;
+/*use Illuminate\Http\Response;*/
 
 class PropertyOptionController extends Controller
 {
@@ -38,7 +38,7 @@ class PropertyOptionController extends Controller
      *
      * @param  PropertyOptionRequest  $request
      * @param  Property  $property
-     * @return void
+     * @return \Illuminate\Http\Response
      */
     public function store(PropertyOptionRequest $request, Property $property)
     {
@@ -69,7 +69,7 @@ class PropertyOptionController extends Controller
      */
     public function edit(Property $property, PropertyOption $propertyOption)
     {
-        return view('auth.property_options.form', compact('property', 'propertyOption'));
+        return view('auth.property_options.form', compact('property', 'propertyOption')); // ?
     }
 
     /**
@@ -92,7 +92,7 @@ class PropertyOptionController extends Controller
      *
      * @param  Property  $property
      * @param  PropertyOption  $propertyOption
-     * @return Response
+     * @return \Illuminate\Http\Response
      * @throws \Exception
      */
     public function destroy(Property $property, PropertyOption $propertyOption)

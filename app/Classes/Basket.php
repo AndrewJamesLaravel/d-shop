@@ -85,7 +85,7 @@ class Basket
                 return false;
             }
             $sku->countInOrder = 1;
-            $this->order->sku->push($sku);
+            $this->order->skus->push($sku);
         }
         return true;
     }
